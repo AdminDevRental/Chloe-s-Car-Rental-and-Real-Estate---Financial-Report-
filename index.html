@@ -551,8 +551,8 @@ header{border:1px solid var(--line);border-bottom:4px solid var(--gold)}
 
 
   /* ---------- Supabase (sign-in + synced storage) ---------- */
-  var SUPABASE_URL = "PASTE_YOUR_SUPABASE_URL";
-  var SUPABASE_KEY = "PASTE_YOUR_ANON_PUBLIC_KEY";
+  var SUPABASE_URL = "https://xrbeucbabuqjimgbmmwf.supabase.co";
+  var SUPABASE_KEY = "sb_publishable_WCgSkTsg_3LEt3VaSGxK4g_iVjfP_6a";
   function supabaseStore(sb, uid) {
     var KEYS = ["currency", "target", "budget", "accounts", "cats", "groups", "acctGroups", "hiddenCats", "catGroups", "catGroupMap"];
     function ok(err) { if (err) { var w = $("#where"); if (w) w.textContent = "Could not save: " + (err.message || "connection problem") + ". Check your connection and try again."; } return !err; }
