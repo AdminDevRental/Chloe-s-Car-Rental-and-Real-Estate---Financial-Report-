@@ -1,47 +1,21 @@
 <!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>Chloe&#39;s Car Rental and Real Estate - Financial Report</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap">
 <style>
 /* Layout: one calm column. Month totals first (income, expenses, net, year to date), a quick-add panel, the 12-month chart, then breakdowns, transactions and accounts. */
 :root {
-  --bg: #2C5990;
-  --on-bg: #FFFFFF;
-  --on-bg-muted: rgba(255, 255, 255, 0.8);
-  --surface: #FFFFFF;
-  --fg: #13201B;
-  --muted: #5A6A63;
-  --line: #DCE4E0;
-  --accent: #0E7A5C;
-  --accent-soft: #B5D4C8;
-  --accent-ink: #FFFFFF;
-  --warn: #A8510B;
-  --transfer: #7B2FBE;
-  --grp-ink: #14315E;
-  --expense: #C62828;
-  --tab-navy: #1B3A6B;
-  --tab-navy-sel: #0F2347;
-  --tab-navy-on: #FFFFFF;
-  --tab-green: #CFEBD8;
-  --tab-green-on: #14412A;
-  --tab-green-sel: #A9DDBA;
-  --tab-orange: #FFD9B0;
-  --tab-orange-on: #5A3207;
-  --tab-orange-sel: #FFC285;
-  --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
-  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #2C5990; --surface: #141E19; --fg: #E5EFEA; --muted: #92A49B; --line: #24322B;
-    --accent: #3CCB9E; --accent-soft: #1F4A3C; --accent-ink: #07130E; --warn: #E8A15E; --expense: #FF6B6B; --transfer: #B98CF0; --grp-ink: #8DB4F0;
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #2C5990; --surface: #141E19; --fg: #E5EFEA; --muted: #92A49B; --line: #24322B;
-  --accent: #3CCB9E; --accent-soft: #1F4A3C; --accent-ink: #07130E; --warn: #E8A15E; --expense: #FF6B6B; --transfer: #B98CF0; --grp-ink: #8DB4F0;
-  color-scheme: dark;
+  --bg:#F6F4EF; --soft:#EFECE5; --on-bg:#FFFFFF; --on-bg-muted:rgba(255,255,255,.72);
+  --surface:#FFFFFF; --fg:#14213D; --muted:#6B7280; --line:#E3E0D8; --stone:#D5D1C7;
+  --accent:#2F6FE4; --accent-soft:#DCE7FB; --accent-ink:#FFFFFF;
+  --warn:#B7791F; --transfer:#7A6AC9; --grp-ink:#14213D; --expense:#D93A3A;
+  --navy:#FFFFFF; --gold:#F5B232; color-scheme:light;
+  --tab-navy:#1B3A6B; --tab-navy-sel:#0F2347; --tab-navy-on:#fff;
+  --tab-green:#CFEBD8; --tab-green-on:#14412A; --tab-green-sel:#A9DDBA;
+  --tab-orange:#FFD9B0; --tab-orange-on:#5A3207; --tab-orange-sel:#FFC285;
+  --shadow:0 1px 2px rgba(20,33,61,.05),0 12px 30px -16px rgba(20,33,61,.14);
+  --font-display:"Newsreader",Georgia,"Times New Roman",serif;
+  --font-body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
 }
 * { box-sizing: border-box; }
 body {
@@ -194,11 +168,98 @@ form.add { display: grid; grid-template-columns: 140px 1fr 1fr 120px 1.2fr auto;
 .modal-card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px; width: 100%; max-width: 440px; max-height: 100%; overflow-y: auto; display: flex; flex-direction: column; gap: 14px; }
 footer { font-size: 0.82rem; color: var(--on-bg-muted); }
 @media (prefers-reduced-motion: no-preference) { .meter i, .src .bar i { transition: width .3s ease; } }
+
+/* ===== Premium theme ===== */
+body{background:var(--bg);font:400 15px/1.55 var(--font-body);-webkit-font-smoothing:antialiased;padding-block:32px 64px}
+.wrap{max-width:1040px;gap:26px}
+h1,h2{font-family:var(--font-display)}
+h2{font-size:1.2rem;font-weight:600;letter-spacing:-.005em}
+.label{font-size:.78rem;letter-spacing:0;text-transform:none;font-weight:600;color:var(--muted)}
+.big{font-family:var(--font-body);font-size:1.95rem;font-weight:700;letter-spacing:-.025em;font-variant-numeric:tabular-nums}
+
+header{background:var(--navy);color:var(--fg);border-radius:18px;padding:32px 36px;border-bottom:3px solid var(--gold);box-shadow:var(--shadow);align-items:flex-end;gap:20px 32px}
+header h1{font-size:2.1rem;font-weight:600;letter-spacing:-.02em;line-height:1.15;color:var(--fg);max-width:20ch}
+header p{color:var(--muted);margin-top:10px;max-width:46ch;font-size:.95rem}
+header .label{color:var(--muted)}
+header select{background:var(--surface);color:var(--fg);border-color:var(--stone)}
+header select option{color:var(--fg);background:var(--surface)}
+header select:focus-visible{outline-color:var(--gold)}
+
+.tabs{gap:6px;border-bottom:1px solid var(--line);padding:0 4px}
+.tabs button,.tabs button[data-tab]{background:var(--surface)!important;color:var(--muted)!important;border-radius:10px 10px 0 0!important;border:1px solid var(--line)!important;border-bottom:3px solid transparent!important;margin-bottom:-1px;padding:12px 20px;font-weight:600;transition:color .15s,border-color .15s}
+.tabs button:hover{color:var(--fg)!important}
+.tabs button[aria-selected="true"],.tabs button[data-tab][aria-selected="true"]{color:var(--fg)!important;border-bottom:2px solid var(--gold)!important}
+.tabs button:focus-visible{outline:2px solid var(--accent)}
+
+.tile,section.panel{border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}
+.tile{padding:22px 24px;gap:8px}
+section.panel{padding:24px;gap:16px}
+.tiles{gap:16px}
+.delta{font-size:.84rem}
+
+input,select{border-radius:10px;border:1px solid var(--line);padding:10px 12px;transition:border-color .15s,box-shadow .15s}
+input:hover,select:hover{border-color:color-mix(in srgb,var(--muted) 50%,var(--line))}
+input:focus-visible,select:focus-visible{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 22%,transparent)}
+button{border-radius:10px;transition:background-color .15s,border-color .15s,box-shadow .15s,transform .05s}
+button:active{transform:translateY(1px)}
+button.primary{box-shadow:0 1px 2px rgba(0,0,0,.15)}
+button.primary:hover{filter:brightness(1.08)}
+button:not(.primary):not(.link):not(.icon-btn):not(.grp-toggle):hover{border-color:var(--muted)}
+.seg{border:0;background:var(--soft);padding:3px;border-radius:12px;gap:2px}
+.seg button{border-radius:9px;padding:7px 16px;color:var(--muted);font-weight:500}
+.seg button[aria-pressed="true"]{box-shadow:0 1px 3px rgba(0,0,0,.2);color:var(--accent-ink)}
+
+.meter{height:8px}.src .bar{height:6px}
+.entry{padding:12px 0}
+.acct{padding:12px 0}
+.rtable{font-size:.9rem}
+.rtable th,.rtable td{padding:11px 12px}
+.rtable thead th{font-size:.78rem;letter-spacing:0;text-transform:none;font-weight:600;border-bottom:1px solid var(--line)}
+.rtable tbody tr:hover td{background:var(--soft)}
+.rtable.matrix tbody tr:hover td:first-child{background:var(--soft)}
+.rtable tfoot td,.rtable tr.sum td{border-top:2px solid var(--line)}
+.ref{border-radius:6px}
+.tag{border-radius:6px}
+
+.modal{background:rgba(8,16,30,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+.modal-card{border-radius:18px;padding:26px;box-shadow:0 24px 60px -20px rgba(0,0,0,.5)}
+footer{text-align:center;color:var(--muted);padding-top:8px}
+
+
+/* logo-inspired details */
+body{background:var(--bg)}
+.mark{display:block;width:60px;height:60px;margin-bottom:18px;filter:drop-shadow(0 6px 14px rgba(20,33,61,.18))}
+header{border-bottom:4px solid var(--gold)}
+.tabs button[aria-selected="true"],.tabs button[data-tab][aria-selected="true"]{border-bottom:3px solid var(--gold)!important}
+.meter,.src .bar{background:var(--line)}
+
+/* ===== Loading screen ===== */
+#splash{position:fixed;inset:0;z-index:100;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;background:#F6F4EF;animation:splashOut .55s ease 2s forwards}
+#splash .sp-brand{display:flex;align-items:center;gap:16px}
+#splash .sp-mark{width:92px;height:92px;flex:none;filter:none}
+#splash .sp-name{font-family:var(--font-display);font-weight:600;font-size:2.1rem;letter-spacing:.32em;color:#14213D;padding-bottom:6px;border-bottom:3px solid #F5B232;line-height:1.1}
+#splash .sp-sub{font:600 .95rem var(--font-body);letter-spacing:.5em;color:#14213D;margin-top:10px}
+#splash .sp-bar{width:200px;height:4px;border-radius:99px;background:#E3E0D8;overflow:hidden}
+#splash .sp-bar i{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,#D93A3A,#2F6FE4 55%,#F5C400);animation:splashBar 1.9s cubic-bezier(.4,.1,.2,1) forwards}
+@keyframes splashBar{to{width:100%}}
+@keyframes splashOut{to{opacity:0;visibility:hidden}}
+@media (max-width:520px){#splash .sp-brand{flex-direction:column;gap:18px}#splash .sp-name{font-size:1.6rem;letter-spacing:.26em}#splash .sp-sub{letter-spacing:.4em}}
+@media (prefers-reduced-motion:reduce){#splash{animation-duration:.01s;animation-delay:.6s}#splash .sp-bar i{animation:none;width:100%}}
+header{border:1px solid var(--line);border-bottom:4px solid var(--gold)}
+#login{background:var(--bg);backdrop-filter:none;-webkit-backdrop-filter:none;z-index:60}
+#where+button.link{display:block;margin:6px auto 0}
+@media (max-width:620px){header{padding:24px 22px}header h1{font-size:1.7rem}section.panel{padding:18px}.tile{padding:18px}}
+@media print{body{background:#fff;padding:0}header{box-shadow:none;border:1px solid #ccc;background:#fff;color:#000}header h1,header p{color:#000}.tabs,form,.seg,button{display:none!important}.tile,section.panel{box-shadow:none}}
 </style>
 
+<div id="splash" role="status" aria-label="Loading Chloe's financial report">
+  <div class="sp-brand"><svg class="sp-mark" viewBox="0 0 64 64" role="img" aria-label="Chloe's Car Rental logo"><circle cx="32" cy="32" r="32" fill="#14213D"/><circle cx="32" cy="32" r="31" fill="none" stroke="rgba(255,255,255,.12)"/><path d="M47.5 17.5A20.5 20.5 0 1 0 47.5 46.5" fill="none" stroke="#F5B232" stroke-width="4.6" stroke-linecap="round"/></svg><div><div class="sp-name">CHLOE&#8217;S</div><div class="sp-sub">CAR RENTAL</div></div></div>
+  <div class="sp-bar"><i></i></div>
+</div>
 <div class="wrap">
   <header>
     <div>
+      <svg class="mark" viewBox="0 0 64 64" role="img" aria-label="Chloe's Car Rental logo"><circle cx="32" cy="32" r="32" fill="#14213D"/><circle cx="32" cy="32" r="31" fill="none" stroke="rgba(255,255,255,.12)"/><path d="M47.5 17.5A20.5 20.5 0 1 0 47.5 46.5" fill="none" stroke="#F5B232" stroke-width="4.6" stroke-linecap="round"/></svg>
       <h1>Chloe&#39;s Car Rental and Real Estate - Financial Report</h1>
       <p>Log what comes in and what goes out, see what is left each month, and track both against a target and a budget.</p>
     </div>
@@ -391,6 +452,7 @@ footer { font-size: 0.82rem; color: var(--on-bg-muted); }
   </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
 <script>
 (function () {
   var $ = function (s) { return document.querySelector(s); };
@@ -485,6 +547,84 @@ footer { font-size: 0.82rem; color: var(--on-bg-muted); }
         return profile.set({ currency: settings.currency, target: settings.target || 0, budget: settings.budget || 0, accounts: settings.accounts || [], cats: settings.cats || { income: [], expense: [] }, groups: settings.groups || [], acctGroups: settings.acctGroups || {}, hiddenCats: settings.hiddenCats || { income: [], expense: [] }, catGroups: settings.catGroups || { income: [], expense: [] }, catGroupMap: settings.catGroupMap || { income: {}, expense: {} } });
       }
     };
+  }
+
+
+  /* ---------- Supabase (sign-in + synced storage) ---------- */
+  var SUPABASE_URL = "PASTE_YOUR_SUPABASE_URL";
+  var SUPABASE_KEY = "PASTE_YOUR_ANON_PUBLIC_KEY";
+  function supabaseStore(sb, uid) {
+    var KEYS = ["currency", "target", "budget", "accounts", "cats", "groups", "acctGroups", "hiddenCats", "catGroups", "catGroupMap"];
+    function ok(err) { if (err) { var w = $("#where"); if (w) w.textContent = "Could not save: " + (err.message || "connection problem") + ". Check your connection and try again."; } return !err; }
+    return {
+      label: "Entries are saved securely to your account and sync across your devices.",
+      start: function () {
+        Promise.all([
+          sb.from("fin_entries").select("id,data").order("created_at", { ascending: true }),
+          sb.from("fin_profiles").select("settings").maybeSingle()
+        ]).then(function (r) {
+          if (!ok(r[0].error)) { loaded = true; render(); return; }
+          entries = (r[0].data || []).map(function (x) { var o = Object.assign({}, x.data); o.id = x.id; return o; });
+          var st = r[1].data && r[1].data.settings;
+          if (st) KEYS.forEach(function (k) { if (st[k] !== undefined && st[k] !== null) settings[k] = st[k]; });
+          loaded = true; render();
+        });
+      },
+      add: function (e) {
+        e.ref = e.ref || nextRef(typeOf(e));
+        var d = Object.assign({}, e); delete d.id;
+        return sb.from("fin_entries").insert({ data: d }).select("id").single().then(function (r) {
+          if (!ok(r.error)) return;
+          e.id = r.data.id; entries = entries.concat([e]); render();
+        });
+      },
+      update: function (id, patch) {
+        var cur = entries.filter(function (x) { return x.id === id; })[0];
+        if (!cur) return Promise.resolve();
+        var next = Object.assign({}, cur, patch), d = Object.assign({}, next); delete d.id;
+        return sb.from("fin_entries").update({ data: d }).eq("id", id).then(function (r) {
+          if (!ok(r.error)) return;
+          entries = entries.map(function (x) { return x.id === id ? next : x; }); render();
+        });
+      },
+      remove: function (id) {
+        return sb.from("fin_entries").delete().eq("id", id).then(function (r) {
+          if (!ok(r.error)) return;
+          entries = entries.filter(function (x) { return x.id !== id; }); render();
+        });
+      },
+      saveSettings: function (p) {
+        Object.assign(settings, p);
+        var st = {}; KEYS.forEach(function (k) { st[k] = settings[k]; });
+        return sb.from("fin_profiles").upsert({ user_id: uid, settings: st }).then(function (r) { ok(r.error); render(); });
+      }
+    };
+  }
+  function showLogin(sb) {
+    return new Promise(function (done) {
+      var o = document.createElement("div"); o.className = "modal"; o.id = "login";
+      o.innerHTML = '<form class="modal-card" autocomplete="on"><h2>Sign in</h2><p class="muted" style="margin:0">Enter the email and password for this report.</p>' +
+        '<div class="field"><label class="label" for="lg-email">Email</label><input id="lg-email" type="email" autocomplete="username" required></div>' +
+        '<div class="field"><label class="label" for="lg-pass">Password</label><input id="lg-pass" type="password" autocomplete="current-password" required></div>' +
+        '<p class="msg" id="lg-msg" role="status"></p><button class="primary" type="submit">Sign in</button></form>';
+      document.body.appendChild(o);
+      o.querySelector("form").addEventListener("submit", function (ev) {
+        ev.preventDefault();
+        var m = o.querySelector("#lg-msg"); m.textContent = "Signing in…";
+        sb.auth.signInWithPassword({ email: o.querySelector("#lg-email").value.trim(), password: o.querySelector("#lg-pass").value }).then(function (r) {
+          if (r.error || !r.data.session) { m.textContent = "Wrong email or password. Try again."; return; }
+          o.remove(); done(r.data.session);
+        });
+      });
+    });
+  }
+  function browserDownload() {
+    return { save: function (o) {
+      var a = document.createElement("a");
+      a.href = URL.createObjectURL(new Blob([o.data], { type: "text/csv;charset=utf-8" }));
+      a.download = o.filename; document.body.appendChild(a); a.click(); a.remove();
+      return Promise.resolve({ status: "saved" });
+    } };
   }
 
   /* ---------- calculations ---------- */
@@ -1544,9 +1684,18 @@ footer { font-size: 0.82rem; color: var(--on-bg-muted); }
       db = r[0]; user = r[1]; dl = r[2] || null;
       uid = user && user.id ? await user.id() : null;
     } catch (e) {}
-    store = db && uid ? dbStore(db, uid) : localStore();
-    store.start();
-    $("#r-csv").hidden = !dl;
+    if (db && uid) { store = dbStore(db, uid); store.start(); $("#r-csv").hidden = !dl; return; }
+    dl = dl || browserDownload();
+    $("#r-csv").hidden = false;
+    var cfgOk = SUPABASE_URL.indexOf("http") === 0 && SUPABASE_KEY.length > 20 && window.supabase;
+    if (!cfgOk) { store = localStore(); store.start(); return; }
+    var sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+    var sess = (await sb.auth.getSession()).data.session;
+    if (!sess) sess = await showLogin(sb);
+    store = supabaseStore(sb, sess.user.id); store.start();
+    var out = document.createElement("button"); out.type = "button"; out.className = "link"; out.textContent = "Sign out";
+    out.addEventListener("click", function () { sb.auth.signOut().then(function () { location.reload(); }); });
+    $("#where").insertAdjacentElement("afterend", out);
   })();
 })();
 </script>
