@@ -601,6 +601,35 @@ header{border:1px solid var(--line);border-bottom:4px solid var(--gold)}
       }
     };
   }
+  function showChangePassword(sb) {
+    var o = document.createElement("div"); o.className = "modal"; o.id = "pw-modal";
+    o.innerHTML = '<form class="modal-card" role="dialog" aria-modal="true" aria-label="Change password"><h2>Change password</h2>' +
+      '<div class="field"><label class="label" for="np1">New password</label><input id="np1" type="password" autocomplete="new-password" minlength="8" required></div>' +
+      '<div class="field"><label class="label" for="np2">Confirm new password</label><input id="np2" type="password" autocomplete="new-password" minlength="8" required></div>' +
+      '<p class="msg" id="np-msg" role="status">Use at least 8 characters.</p>' +
+      '<div style="display:flex;gap:10px;justify-content:flex-end"><button type="button" id="np-cancel">Cancel</button><button class="primary" type="submit" id="np-save">Save password</button></div></form>';
+    document.body.appendChild(o);
+    var m = o.querySelector("#np-msg"), save = o.querySelector("#np-save");
+    function close() { document.removeEventListener("keydown", esc); o.remove(); }
+    function esc(e) { if (e.key === "Escape") close(); }
+    document.addEventListener("keydown", esc);
+    o.addEventListener("click", function (e) { if (e.target === o) close(); });
+    o.querySelector("#np-cancel").addEventListener("click", close);
+    o.querySelector("#np1").focus();
+    o.querySelector("form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      var a = o.querySelector("#np1").value, b = o.querySelector("#np2").value;
+      m.style.color = "var(--expense)";
+      if (a.length < 8) { m.textContent = "Password must be at least 8 characters."; return; }
+      if (a !== b) { m.textContent = "The two passwords do not match."; return; }
+      save.disabled = true; m.style.color = ""; m.textContent = "Saving…";
+      sb.auth.updateUser({ password: a }).then(function (r) {
+        if (r.error) { m.style.color = "var(--expense)"; m.textContent = r.error.message || "Could not change the password."; save.disabled = false; return; }
+        m.style.color = "var(--accent)"; m.textContent = "Password updated.";
+        setTimeout(close, 1200);
+      }).catch(function () { m.style.color = "var(--expense)"; m.textContent = "Could not connect. Try again."; save.disabled = false; });
+    });
+  }
   function browserDownload() {
     return { save: function (o) {
       var a = document.createElement("a");
@@ -1679,7 +1708,11 @@ header{border:1px solid var(--line);border-bottom:4px solid var(--gold)}
     store = supabaseStore(sb, sess.user.id); store.start();
     var out = document.createElement("button"); out.type = "button"; out.className = "link"; out.textContent = "Sign out";
     out.addEventListener("click", function () { sb.auth.signOut().then(function () { location.replace("index.html"); }); });
-    $("#where").insertAdjacentElement("afterend", out);
+    var pwb = document.createElement("button"); pwb.type = "button"; pwb.className = "link"; pwb.textContent = "Change password";
+    pwb.addEventListener("click", function () { showChangePassword(sb); });
+    var bar = document.createElement("div"); bar.style.cssText = "display:flex;justify-content:center;gap:14px;margin-top:6px";
+    bar.appendChild(pwb); bar.appendChild(out);
+    $("#where").insertAdjacentElement("afterend", bar);
   })();
 })();
 </script>
