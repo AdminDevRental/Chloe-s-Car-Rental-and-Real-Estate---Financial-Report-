@@ -248,6 +248,12 @@ header{border-bottom:4px solid var(--gold)}
 header{border:1px solid var(--line);border-bottom:4px solid var(--gold)}
 #login{background:var(--bg);backdrop-filter:none;-webkit-backdrop-filter:none;z-index:60}
 #where+button.link{display:block;margin:6px auto 0}
+header{position:relative}
+.hdr-actions{position:absolute;top:18px;right:22px;display:flex;gap:8px}
+.hbtn{font:600 .82rem var(--font-body);color:var(--muted);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:7px 14px;cursor:pointer;transition:color .15s,border-color .15s,background-color .15s}
+.hbtn:hover{color:var(--fg);border-color:var(--stone);background:var(--bg)}
+.hbtn:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+@media (max-width:520px){.hdr-actions{position:static;order:-1;width:100%;justify-content:flex-end;margin-bottom:-6px}}
 @media (max-width:620px){header{padding:24px 22px}header h1{font-size:1.7rem}section.panel{padding:18px}.tile{padding:18px}}
 @media print{body{background:#fff;padding:0}header{box-shadow:none;border:1px solid #ccc;background:#fff;color:#000}header h1,header p{color:#000}.tabs,form,.seg,button{display:none!important}.tile,section.panel{box-shadow:none}}
 </style>
@@ -1708,11 +1714,12 @@ header{border:1px solid var(--line);border-bottom:4px solid var(--gold)}
     store = supabaseStore(sb, sess.user.id); store.start();
     var out = document.createElement("button"); out.type = "button"; out.className = "link"; out.textContent = "Sign out";
     out.addEventListener("click", function () { sb.auth.signOut().then(function () { location.replace("index.html"); }); });
-    var pwb = document.createElement("button"); pwb.type = "button"; pwb.className = "link"; pwb.textContent = "Change password";
+    var pwb = document.createElement("button"); pwb.type = "button"; pwb.className = "hbtn"; pwb.textContent = "Change password";
     pwb.addEventListener("click", function () { showChangePassword(sb); });
-    var bar = document.createElement("div"); bar.style.cssText = "display:flex;justify-content:center;gap:14px;margin-top:6px";
-    bar.appendChild(pwb); bar.appendChild(out);
-    $("#where").insertAdjacentElement("afterend", bar);
+    out.className = "hbtn";
+    var act = document.createElement("div"); act.className = "hdr-actions";
+    act.appendChild(pwb); act.appendChild(out);
+    document.querySelector("header").appendChild(act);
   })();
 })();
 </script>
